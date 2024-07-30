@@ -7,17 +7,17 @@ I made this app to get to know Django REST framework better and learn how to mak
 This was initially only a branch on my repository OPG-app that I made for for job evaluation process but eventually made whole new project.
 
 ## Features
+User Authentication: Authenticate users to manage products.
 View Products: Display a list of products with their details.
 Add Product: Add a new product with a category, name, and detail.
 Edit Product: Edit the details of an existing product.
 Delete Product: Remove a product from the list.
-User Authentication: Authenticate users to manage products.
 
 ## Stack
-Frontend: React, Axios, React Router, CSS
-Backend: Django, Django REST framework
+- Frontend: React, Axios, React Router, CSS
+- Backend: Django, Django REST framework
 
 ## Setup
-Node.js 20.11
-Python 3.10
-Django 5
+- Node.js 20.11
+- Python 3.10
+- Django 5

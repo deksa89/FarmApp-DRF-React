@@ -1,0 +1,23 @@
+{% extends 'farmapp/main.html' %}
+{% load static %}
+
+{% block site_css %}<link rel="stylesheet" href="{% static 'farmapp/login.css' %}">{% endblock %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<body>
+    <h2 class="login">Ulogiraj se</h2>
+    <form class="login__form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="login__btns">
+            <button class="login__submit" type="submit">Ulogiraj se</button>
+    
+            <p class="login__register-msg">Ako nemaš račun, registriraj se</p>
+            <a class="login__register" href="{% url 'register' %}">Registriraj se</a>
+        </div>
+    </form>
+</body>
+</html>
+{% endblock %}

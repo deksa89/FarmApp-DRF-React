@@ -1,0 +1,53 @@
+{% extends 'farmapp/main.html' %}
+{% load static %}
+
+{% block site_css %}<link rel="stylesheet" href="{% static 'farmapp/product_list.css' %}">{% endblock %}
+{% block title %}{% endblock %}
+
+{% block content %}
+{% include 'farmapp/header.html' %}
+
+    {% if user_profile %}
+        <h1 class="prodlist__name">{{ user_profile.naziv_opg }}</h1>
+    {% else %}
+        <h1>Opg ne postoji</h1>
+    {% endif %}
+
+    <div class="prodlist__addprod">
+        <a href="{% url 'add_product' %}">Dodaj proizvod</a>
+    </div>
+    <table id="sortableTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Naziv proizvoda<span class="sort-arrow"></span></th>
+                <th onclick="sortTable(1)">Kategorija<span class="sort-arrow"></span></th>
+                <th>Detalji</th>
+                <th>Uređivanje</th>
+                <th>Brisanje</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.get_category_display }}</td>
+                <td><a href="{% url 'product_details' product.id %}">Detaljnije</a></td>
+                <td><a href="{% url 'edit_product' product.id %}">Uređivanje</a></td>
+                <td><a href="{% url 'delete_product' product.id %}" class="delete-link" onclick="return confirmDelete()">Obriši</a></td>
+            </tr>
+            <div class="popup-overlay"></div>
+            <div id="confirmation-popup" class="confirmation-popup" style="display:none;">
+                <p>Da li zaista želite obrisati proizvod?</p>
+                <button id="confirm-delete">Potvrdi</button>
+                <button id="cancel-delete">Odustani</button>
+            </div>              
+            {% empty %}
+            <tr>
+                <td colspan="3">No products available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="{% static 'farmapp/js/sortable.js' %}"></script>
+    <script src="{% static 'farmapp/js/delete_prompt.js' %}"></script>
+{% endblock %}

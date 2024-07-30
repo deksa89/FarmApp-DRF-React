@@ -1,0 +1,17 @@
+{% extends 'farmapp/main.html' %}
+{% load static %}
+
+{% block site_css %}<link rel="stylesheet" href="{% static 'farmapp/add_product.css' %}">{% endblock %}
+{% block title %}{% endblock %}
+
+{% block content %}
+    {% include 'farmapp/header.html' %}
+    <body class="addprod">
+        <h2 class="addprod_title">Dodaj novi proizvod</h2>
+        <form class="addprod_form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="addprod_btn" type="submit">Dodaj proizvod</button>
+        </form>
+    </body>
+{% endblock %}

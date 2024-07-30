@@ -1,0 +1,17 @@
+{% extends 'farmapp/main.html' %}
+{% load static %}
+
+{% block site_css %}<link rel="stylesheet" href="{% static 'farmapp/edit_profile.css' %}">{% endblock %}
+{% block title %}{% endblock %}
+
+{% block content %}
+    {% include 'farmapp/header.html' %}
+    <body class="editprof">
+        <h1 class="editprof__title">Edit Profile</h1>
+        <form class="editprof__form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="editprof__btn" type="submit">Save Changes</button>
+        </form>
+    </body>
+{% endblock %}

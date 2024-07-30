@@ -1,0 +1,124 @@
+:root {
+    --primary-color: #4CAF50;
+    --text-color: #333;
+    --font-family: 'Arial', sans-serif;
+    --popup-background-color: #fff;
+    --overlay-color: rgba(0, 0, 0, 0.5);
+    --hover-color: #3498db; 
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.prodlist__addprod {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.prodlist__name {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary-color);
+}
+
+.prodlist__addprod a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.prodlist__addprod a:hover {
+    background-color: var(--hover-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    z-index: 1000;
+    display: none;
+}
+
+.confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--popup-background-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1001;
+    width: 300px;
+    text-align: center;
+    display: none;
+}
+
+.confirmation-popup p {
+    margin-bottom: 20px;
+}
+
+.confirmation-popup button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#confirm-delete {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#confirm-delete:hover {
+    background-color: var(--hover-color);
+}
+
+#cancel-delete {
+    background-color: #ccc;
+}
+
+#cancel-delete:hover {
+    background-color: darken(#ccc, 10%);
+}
+
+.sort-arrow {
+    display: inline-block;
+    margin-left: 5px;
+}

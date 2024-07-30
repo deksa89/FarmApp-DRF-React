@@ -1,0 +1,20 @@
+{% extends 'farmapp/main.html' %}
+{% load static %}
+
+{% block site_css %}<link rel="stylesheet" href="{% static 'farmapp/welcome.css' %}">{% endblock %}
+{% block title %}{% endblock %}
+
+{% block content %}
+<body>
+    <div class="welcome">
+        <img class="welcome__image" src="../../static/farmapp/images/farm.jpg" alt="Company Logo" style="width:100px;">
+        <h1 class="welcome__title">Dobrodošao na stranicu za registraciju svog OPG-a</h1>
+        <p class="welcome__msg">Ovdje možeš registrirati svoj OPG i dodati sve proizvode koje proizvodiš.</p>
+        <div class="welcome__btns">
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

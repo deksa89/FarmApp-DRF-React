@@ -92,12 +92,12 @@ function ListProducts() {
       )}
 
       <div className="products-list">
+        <button className="add-button" onClick={() => handleAddProduct()}>Add Product</button>
         {prodData.map((product) => (
           <div key={product.id} className="product-item">
             <p className="product-name" onClick={() => handleProductClick(product)}>{product.name}</p>
             <p className="product-category">{product.category}</p>
             <p className="product-detail">{product.detail}</p>
-            <button className="add-button" onClick={() => handleAddProduct()}>Add Product</button>
             <button className="edit-button" onClick={() => handleEdit(product.id)}>Edit</button>
             <button className="delete-button" onClick={() => handleDelete(product.id)}>Delete</button>
           </div>

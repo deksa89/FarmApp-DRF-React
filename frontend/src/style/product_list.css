@@ -85,6 +85,7 @@ button {
 .add-button {
   background-color: #2196F3;
   color: white;
+  margin: 0 0 20px 0;
 }
 
 .edit-button {

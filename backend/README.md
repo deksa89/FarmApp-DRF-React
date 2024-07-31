@@ -1,6 +1,9 @@
-# OPG-app
+# Farm-Django
 
 I made this little CRUD app as a part of job evaluation process in CARNET. It is built with Django and allows users to create, view, update and delete farm products once a user is registered.
+
+It has been updated with Django REST Framework (DRF) so that it serves as API to communicate between databases and user.
+By running django in the CMD and opening localhost:8000 you can register and login as well as view, add, delete and update products throug DRF using json format without having frontend but you have to pay attention on the format otherwise it will return error.
 
 
 ## Features
